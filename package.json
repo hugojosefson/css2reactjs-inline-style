@@ -3,6 +3,9 @@
   "version": "0.0.1-alpha",
   "description": "Converts css strings to fit in a ReactJS project's js style objects",
   "main": "index.js",
+  "scripts": {
+    "start": "node ."
+  },
   "author": "Hugo Josefson <hugo@josefson.org> (http://about.me/hugojosefson)",
   "license": "MIT",
   "engines": {
