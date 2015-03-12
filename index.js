@@ -4,6 +4,16 @@
 var linereader = require('through2-linereader');
 var camelCase = require('camel-case');
 var endsWith = require('ends-with');
+var debounce = require('lodash.debounce');
+
+var output = [];
+
+function doFlush() {
+    console.log('\n\n' + output.join('\n'));
+    output = [];
+}
+
+var flush = debounce(doFlush, 50);
 
 process.stdin
     .pipe(linereader())
@@ -24,5 +34,6 @@ process.stdin
         } else if (isNaN(Number(value))) {
             value = '\'' + value + '\'';
         }
-        console.log(key + ': ' + value);
+        output.push(key + ': ' + value);
+        flush();
     });
