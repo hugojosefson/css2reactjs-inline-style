@@ -1,0 +1,11 @@
+{
+  "name": "css2js",
+  "version": "0.0.1-alpha",
+  "description": "Converts css strings to fit in a ReactJS project's js style objects",
+  "main": "index.js",
+  "author": "Hugo Josefson <hugo@josefson.org> (http://about.me/hugojosefson)",
+  "license": "MIT",
+  "engines": {
+    "node": "0.12"
+  }
+}
