@@ -7,5 +7,10 @@
   "license": "MIT",
   "engines": {
     "node": "0.12"
+  },
+  "dependencies": {
+    "camel-case": "^1.1.1",
+    "ends-with": "^0.2.0",
+    "through2-linereader": "0.0.1"
   }
 }
