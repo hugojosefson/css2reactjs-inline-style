@@ -15,7 +15,13 @@ process.stdin
         if (endsWith(value, ';')) {
             value = value.substring(0, value.length - 1);
         }
-        if (isNaN(Number(value))) {
+        if (value === '@light') {
+            value = 'weight.light';
+        } else if (value === '@regular') {
+            value = 'weight.regular';
+        } else if (value === '@medium') {
+            value = 'weight.medium';
+        } else if (isNaN(Number(value))) {
             value = '\'' + value + '\'';
         }
         console.log(key + ': ' + value);
