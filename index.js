@@ -5,11 +5,13 @@ var linereader = require('through2-linereader');
 var camelCase = require('camel-case');
 var endsWith = require('ends-with');
 var debounce = require('lodash.debounce');
+var quote = require('quote')({ quotes: '\'' });
+var jsStringEscape = require('js-string-escape');
 
 var output = [];
 
 function doFlush() {
-    console.log('\n\n' + output.join('\n'));
+    console.log('\n\n' + output.join(',\n'));
     output = [];
 }
 
@@ -32,7 +34,7 @@ process.stdin
         } else if (value === '@medium') {
             value = 'weight.medium';
         } else if (isNaN(Number(value))) {
-            value = '\'' + value + '\'';
+            value = quote(jsStringEscape(value));
         }
         output.push(key + ': ' + value);
         flush();
