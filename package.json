@@ -3,11 +3,19 @@
   "version": "0.0.1-alpha",
   "description": "Converts css strings to fit in a ReactJS project's js style objects",
   "main": "index.js",
+  "bin": {
+    "css2js": "./bin/css2js.js"
+  },
   "scripts": {
-    "start": "node ."
+    "start": "npm install --production && node bin/css2js.js",
+    "test": "npm install --development && mocha"
   },
   "author": "Hugo Josefson <hugo@josefson.org> (http://about.me/hugojosefson)",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hugojosefson/css2js.git"
+  },
   "engines": {
     "node": "0.12"
   },
@@ -18,5 +26,9 @@
     "lodash.debounce": "^3.0.2",
     "quote": "^0.4.0",
     "through2-linereader": "0.0.1"
+  },
+  "devDependencies": {
+    "chai": "^2.1.1",
+    "mocha": "^2.2.1"
   }
 }
