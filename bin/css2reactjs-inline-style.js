@@ -3,7 +3,7 @@
 
 var linereader = require('through2-linereader');
 var debounce = require('lodash.debounce');
-var css2js = require('..');
+var css2ReactJsInlineStyle = require('..');
 
 var output = [];
 
@@ -18,7 +18,7 @@ process.stdin
     .pipe(linereader())
     .on('data', function (lineBuffer) {
         var cssLine = lineBuffer.toString();
-        var jsLine = css2js(cssLine);
+        var jsLine = css2ReactJsInlineStyle(cssLine);
         output.push(jsLine);
         flush();
     });

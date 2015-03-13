@@ -5,7 +5,7 @@ var endsWith = require('ends-with');
 var quote = require('quote')({quotes: '\''});
 var jsStringEscape = require('js-string-escape');
 
-function cssLine2js(line) {
+function cssLine2ReactJsInlineStyle(line) {
     var parts = line.split(': ');
     var key = camelCase(parts[0]);
     var value = parts[1];
@@ -24,8 +24,8 @@ function cssLine2js(line) {
     return key + ': ' + value;
 }
 
-function css2js(css) {
-    return css.split('\n').map(cssLine2js).join(',\n')
+function css2ReactJsInlineStyle(css) {
+    return css.split('\n').map(cssLine2ReactJsInlineStyle).join(',\n')
 }
 
-module.exports = css2js;
+module.exports = css2ReactJsInlineStyle;
