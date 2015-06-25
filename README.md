@@ -12,6 +12,7 @@ For example, you have this `style.css` file:
   font-size: 24px;
   letter-spacing: 0;
   line-height: 32px;
+  multiple-statements: on-same; line-will: work-just-fine;
 }
 ```
 
@@ -22,7 +23,9 @@ module.exports = {
     specialText: {
         fontSize: '24px',
         letterSpacing: 0,
-        lineHeight: '32px'
+        lineHeight: '32px',
+        multipleStatements: 'on-same',
+        lineWill: 'work-just-fine'
     }
 };
 ```
@@ -60,6 +63,7 @@ Then copy the internal parts of the css you wish to convert:
   font-size: 24px;
   letter-spacing: 0;
   line-height: 32px;
+  multiple-statements: on-same; line-will: work-just-fine;
 ```
 
 Paste it into the tool, and it will spit this out for you:
@@ -67,7 +71,9 @@ Paste it into the tool, and it will spit this out for you:
 ```
 fontSize: '24px',
 letterSpacing: 0,
-lineHeight: '32px'
+lineHeight: '32px',
+multipleStatements: 'on-same',
+lineWill: 'work-just-fine'
 ```
 
 Copy it, and paste into your js file in the correct place. It will fit perfectly inside a JS object literal (`{}`).

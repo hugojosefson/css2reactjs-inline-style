@@ -22,6 +22,9 @@ describe('css2reactjs-inline-style', function () {
         var expectedLines = linesFrom('example.expected-output');
         cssLines.forEach(function (cssLine, i) {
             var expectedLine = (expectedLines[i]).replace(/,$/, '');
+            if ((/^multiple/).test(cssLine)) {
+                expectedLine += ',\n' + (expectedLines[i + 1]).replace(/,$/, '');
+            }
             it(cssLine + '  ==>  ' + expectedLine, function () {
                 expect(css2ReactJsInlineStyle(cssLine)).to.equal(expectedLine);
             });

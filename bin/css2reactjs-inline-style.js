@@ -2,7 +2,7 @@
 'use strict';
 
 var linereader = require('through2-linereader');
-var debounce = require('lodash.debounce');
+var _ = require('lodash');
 var css2ReactJsInlineStyle = require('..');
 
 var output = [];
@@ -12,13 +12,13 @@ function doFlush() {
     output = [];
 }
 
-var flush = debounce(doFlush, 50);
+var flush = _.debounce(doFlush, 50);
 
 process.stdin
     .pipe(linereader())
     .on('data', function (lineBuffer) {
         var cssLine = lineBuffer.toString();
-        var jsLine = css2ReactJsInlineStyle(cssLine);
-        output.push(jsLine);
+        var js = css2ReactJsInlineStyle(cssLine);
+        output.push(js);
         flush();
     });
