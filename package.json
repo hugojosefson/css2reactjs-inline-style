@@ -7,8 +7,8 @@
     "css2reactjs-inline-style": "./bin/css2reactjs-inline-style.js"
   },
   "scripts": {
-    "start": "npm install --production && node bin/css2reactjs-inline-style.js",
-    "test": "npm install --development && mocha"
+    "start": "node bin/css2reactjs-inline-style.js",
+    "test": "mocha"
   },
   "author": "Hugo Josefson <hugo@josefson.org> (http://about.me/hugojosefson)",
   "license": "MIT",
