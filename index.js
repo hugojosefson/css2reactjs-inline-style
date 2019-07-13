@@ -21,11 +21,19 @@ function cssLine2ReactJsInlineStyle(line) {
     return key + ': ' + value;
 }
 
+function splitBySemicolon(line) {
+    return line.split(';')
+}
+
+function trim(expression) {
+    return expression.trim()
+}
+
 function css2ReactJsInlineStyle(css) {
-    return _(css.split('\n'))
-        .invoke(String.prototype.split, ';')
-        .flatten(true)
-        .invoke(String.prototype.trim)
+    return _.chain(css.split('\n'))
+        .map(splitBySemicolon)
+        .flattenDeep()
+        .map(trim)
         .compact()
         .map(cssLine2ReactJsInlineStyle)
         .value()

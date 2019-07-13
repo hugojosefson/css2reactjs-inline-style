@@ -15,7 +15,7 @@ function wholeFile(filename) {
 
 describe('css2reactjs-inline-style', function () {
     it('is a function', function () {
-        expect(css2ReactJsInlineStyle).to.be.a.function;
+        expect(css2ReactJsInlineStyle).to.be.a('function');
     });
     describe('example.css line-by-line', function () {
         var cssLines = linesFrom('example.css');
