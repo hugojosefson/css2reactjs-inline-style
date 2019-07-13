@@ -1,5 +1,10 @@
 # css2reactjs-inline-style
 
+[![Build Status](https://travis-ci.org/hugojosefson/css2reactjs-inline-style.svg?branch=master)](https://travis-ci.org/hugojosefson/css2reactjs-inline-style)
+[![npm page](https://img.shields.io/npm/v/css2reactjs-inline-style.svg)](https://npmjs.com/package/css2reactjs-inline-style)
+[![License MIT](https://img.shields.io/npm/l/css2reactjs-inline-style.svg)](https://tldrlegal.com/license/mit-license)
+[![SemVer 2.0.0](https://img.shields.io/badge/SemVer-2.0.0-lightgrey.svg)](http://semver.org/spec/v2.0.0.html)
+
 _Converts css strings to fit in a ReactJS project's js style objects._
 
 This tool may come in handy whenever you want to take existing `.css` or `.less` definitions, and move them into ReactJS components, in an inline `.js` style.
