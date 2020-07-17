@@ -1,6 +1,6 @@
 {
   "name": "css2reactjs-inline-style",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "Converts css strings to fit in a ReactJS project's js style objects",
   "main": "index.js",
   "bin": {
